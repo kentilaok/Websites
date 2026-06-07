@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-plus-jakarta: var(--font-plus-jakarta), sans-serif;
+
+  --color-ll-white: #ffffff;
+  --color-ll-offwhite: #f8fafc;
+  --color-ll-blue-soft: #e0f2fe;
+  --color-ll-blue-glow: #38bdf8;
+  --color-ll-slate: #334155;
+  --color-ll-slate-light: #94a3b8;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 64rem) {
+    max-width: 80rem;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #334155;
+  }
+  
+  html, body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased font-plus-jakarta selection:bg-ll-blue-glow selection:text-white;
+    cursor: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}

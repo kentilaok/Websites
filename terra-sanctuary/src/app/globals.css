@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-playfair: var(--font-playfair), serif;
+  --font-manrope: var(--font-manrope), sans-serif;
+
+  --color-ts-sand: #F2E8DF;
+  --color-ts-stone: #8C8781;
+  --color-ts-moss: #3A4032;
+  --color-ts-clay: #A6654E;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 64rem) {
+    max-width: 80rem;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #F2E8DF;
+    --foreground: #3A4032;
+  }
+  
+  html, body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased font-manrope selection:bg-ts-clay selection:text-ts-sand;
+    cursor: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+/* Eco-brutalist utilities */
+@layer components {
+  .eco-card {
+    @apply bg-ts-sand border-2 border-ts-moss p-8 relative;
+  }
+  
+  .eco-card::before {
+    content: '';
+    @apply absolute -inset-2 bg-ts-moss -z-10 transition-transform duration-300;
+  }
+  
+  .eco-card:hover::before {
+    @apply translate-x-2 translate-y-2;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 1px solid var(--color-ts-moss);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ts-clay);
+}

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jetbrains: var(--font-jetbrains), monospace;
+
+  --color-ec-black: #000000;
+  --color-ec-white: #ffffff;
+  --color-ec-lime: #ccff00;
+  --color-ec-gray: #333333;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 64rem) {
+    max-width: 80rem;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+  
+  html, body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased font-jetbrains selection:bg-ec-lime selection:text-ec-black;
+    cursor: none;
+    /* Visible Grid Background for brutalism */
+    background-image: 
+      linear-gradient(to right, #333333 1px, transparent 1px),
+      linear-gradient(to bottom, #333333 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center top;
+  }
+
+  /* Brutalist utilities */
+  .brutalist-border {
+    @apply border-4 border-ec-white;
+  }
+  
+  .brutalist-shadow {
+    @apply shadow-[8px_8px_0px_0px_#ffffff] hover:shadow-[12px_12px_0px_0px_#ccff00] hover:-translate-x-1 hover:-translate-y-1 transition-all;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
