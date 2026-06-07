@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-moss-50: #f2f7f4;
+  --color-moss-100: #e1efe5;
+  --color-moss-200: #c4dfcd;
+  --color-moss-300: #9bc6a9;
+  --color-moss-400: #6ca880;
+  --color-moss-500: #4a8c61;
+  --color-moss-600: #36704b;
+  --color-moss-700: #2c593d;
+  --color-moss-800: #254732;
+  --color-moss-900: #1e3a2a;
+
+  --color-snow: #ffffff;
+  --color-terrain: #0a0e12;
+  
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-oswald);
+}
+
+@layer base {
+  :root {
+    --background: #0a0e12;
+    --foreground: #ffffff;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    cursor: none; /* For custom cursor */
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background-color: var(--color-moss-600);
+    color: var(--color-snow);
+  }
+}

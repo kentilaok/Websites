@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-verve-orange: #FF4500;
+  --color-verve-red: #D90000;
+  --color-verve-dark: #0A0A0A;
+  --color-verve-gray: #1A1A1A;
+  --color-verve-light: #FAFAFA;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--color-verve-dark);
+    color: var(--color-verve-light);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  a, button {
+    cursor: none;
+  }
+  
+  ::selection {
+    background-color: var(--color-verve-orange);
+    color: var(--color-verve-dark);
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px var(--color-verve-light);
+  color: transparent;
+}
+.text-stroke:hover {
+  color: var(--color-verve-orange);
+  -webkit-text-stroke: 1px var(--color-verve-orange);
+  transition: all 0.3s ease;
+}

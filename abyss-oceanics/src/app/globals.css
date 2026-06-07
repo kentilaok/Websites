@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-abyss-900: #020617;
+  --color-abyss-800: #0a0e1c;
+  --color-abyss-700: #111a2d;
+  --color-bio-green: #39ff14;
+  --color-bio-cyan: #00ffff;
+  
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #020617;
+    --foreground: #e2e8f0;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+  }
+  .bg-glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2), inset 0 0 15px rgba(0, 255, 255, 0.1);
+  }
+  .glass-panel {
+    background: rgba(10, 14, 28, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+  }
+}

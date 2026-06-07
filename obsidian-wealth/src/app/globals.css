@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #050505;
+  --color-obsidian-light: #111111;
+  --color-obsidian-dark: #000000;
+  --color-silver-100: #f8f9fa;
+  --color-silver-300: #dee2e6;
+  --color-silver-500: #adb5bd;
+  --color-silver-700: #495057;
+  --color-silver-900: #212529;
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    cursor: none;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+  }
+
+  a, button {
+    cursor: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient-silver {
+    background: linear-gradient(to right, #ffffff, #adb5bd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
