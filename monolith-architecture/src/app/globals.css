@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, sans-serif;
+  
+  --color-background: var(--color-deep-black);
+  --color-foreground: var(--color-stark-white);
+  --color-primary: var(--color-hyper-lime);
+  --color-secondary: var(--color-charcoal);
+  --color-border: var(--color-charcoal);
+}
+
+@layer base {
+  :root {
+    --color-deep-black: #050505;
+    --color-charcoal: #121212;
+    --color-stark-white: #FAFAFA;
+    --color-hyper-lime: #D4FF00;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    cursor: none;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(5rem, 15vw, 15rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+@utility text-fluid-h2 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+}
+
+@utility text-fluid-p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+@utility spacing-fluid-y {
+  padding-top: clamp(4rem, 10vw, 10rem);
+  padding-bottom: clamp(4rem, 10vw, 10rem);
+}
+
+@utility no-cursor {
+  & * {
+    cursor: none !important;
+  }
+}

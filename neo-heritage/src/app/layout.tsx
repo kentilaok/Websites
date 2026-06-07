@@ -1,0 +1,32 @@
+import type { Metadata } from "next";
+import { Playfair_Display, Inter } from "next/font/google";
+import "./globals.css";
+
+import SmoothScroller from "@/components/global/SmoothScroller";
+import CustomCursor from "@/components/global/CustomCursor";
+import Navigation from "@/components/global/Navigation";
+
+const playfair = Playfair_Display({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-serif" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+export const metadata: Metadata = {
+  title: "Le Montagne | Luxury Retreat",
+  description: "An exclusive boutique hotel experience.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="suppressHydrationWarning">
+      <body className={`${playfair.variable} ${inter.variable} antialiased suppressHydrationWarning`}>
+        <SmoothScroller />
+        <CustomCursor />
+        <Navigation />
+        {children}
+      </body>
+    </html>
+  );
+}

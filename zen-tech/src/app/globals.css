@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-aluminum: #E2E4E9;
+  --color-titanium: #8C929C;
+  --color-carbon: #121315;
+  --color-pure-white: #FFFFFF;
+  
+  --font-sans: "Inter", -apple-system, sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-background: var(--color-pure-white);
+    --color-foreground: var(--color-carbon);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+@utility text-fluid-h2 {
+  font-size: clamp(2rem, 5vw, 5rem);
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+@utility text-fluid-p {
+  font-size: clamp(0.875rem, 1vw, 1.125rem);
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--color-titanium);
+}
+
+@utility no-cursor {
+  & * {
+    cursor: none !important;
+  }
+}

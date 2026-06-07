@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  
+  --color-background: var(--color-warm-bone);
+  --color-foreground: var(--color-forest-night);
+  --color-primary: var(--color-terracotta);
+  --color-secondary: var(--color-soft-clay);
+  --color-border: var(--color-soft-clay);
+}
+
+@layer base {
+  :root {
+    --color-warm-bone: #F7F5F0;
+    --color-soft-clay: #D6C5B3;
+    --color-forest-night: #1E231F;
+    --color-terracotta: #A94A3D;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* Hide standard cursor for custom cursor implementation */
+    cursor: none;
+    overflow-x: hidden;
+    overscroll-behavior: none; /* Recommended for smooth scroll setups */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(5rem, 15vw, 15rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+@utility text-fluid-h2 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+}
+
+@utility text-fluid-p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+@utility spacing-fluid-y {
+  padding-top: clamp(4rem, 10vw, 10rem);
+  padding-bottom: clamp(4rem, 10vw, 10rem);
+}
+
+@utility no-cursor {
+  & * {
+    cursor: none !important;
+  }
+}

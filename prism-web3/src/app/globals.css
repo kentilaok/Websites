@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+  
+  --color-background: var(--color-obsidian);
+  --color-foreground: var(--color-stark-white);
+  --color-glass: var(--color-zinc-glass);
+}
+
+@layer base {
+  :root {
+    --color-obsidian: #0A0A0B;
+    --color-zinc-glass: rgba(24, 24, 27, 0.6);
+    --color-stark-white: #FFFFFF;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    cursor: none;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(5rem, 15vw, 15rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+@utility text-fluid-h2 {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 1;
+}
+
+@utility text-fluid-p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+@utility spacing-fluid-y {
+  padding-top: clamp(4rem, 10vw, 10rem);
+  padding-bottom: clamp(4rem, 10vw, 10rem);
+}
+
+@utility no-cursor {
+  & * {
+    cursor: none !important;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #A855F7 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass-panel {
+    background: var(--color-zinc-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}

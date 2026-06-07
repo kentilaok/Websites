@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-acid-yellow: #E2FF00;
+  --color-electric-pink: #FF00E5;
+  --color-deep-purple: #240046;
+  --color-off-white: #F8F9FA;
+  
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-background: var(--color-off-white);
+    --color-foreground: var(--color-deep-purple);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(4rem, 15vw, 15rem);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+@utility text-fluid-h2 {
+  font-size: clamp(3rem, 10vw, 10rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+@utility text-fluid-p {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@utility no-cursor {
+  & * {
+    cursor: none !important;
+  }
+}
+
+@layer utilities {
+  .marquee-content {
+    animation: marquee 20s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}

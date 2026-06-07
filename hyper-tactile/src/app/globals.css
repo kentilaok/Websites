@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-skin: #F5EAE1;
+  --color-vetiver: #E5D5C5;
+  --color-oud: #2B2623;
+  --color-rose: #C5A491;
+  
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --color-background: var(--color-skin);
+    --color-foreground: var(--color-oud);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(4rem, 15vw, 15rem);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+}
+
+@utility text-fluid-h2 {
+  font-size: clamp(3rem, 10vw, 10rem);
+  line-height: 0.9;
+}
+
+@utility text-fluid-p {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 2;
+}
+
+@utility no-cursor {
+  & * {
+    cursor: none !important;
+  }
+}
+
+@layer utilities {
+  .smoke-gradient {
+    background: radial-gradient(circle at center, rgba(197, 164, 145, 0.4) 0%, transparent 70%);
+  }
+}
