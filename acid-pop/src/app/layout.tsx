@@ -5,6 +5,7 @@ import "./globals.css";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <CustomCursor />
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

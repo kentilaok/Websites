@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/global/Navigation";
 import { CustomCursor } from "@/components/global/CustomCursor";
 import { SmoothScroller } from "@/components/global/SmoothScroller";
+import { Footer } from "@/components/global/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
         <CustomCursor />
         <Navigation />
         <main className="flex-1 relative z-10">{children}</main>
+        <Footer />
       </body>
     </html>
   );

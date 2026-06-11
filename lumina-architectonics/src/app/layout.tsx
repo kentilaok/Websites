@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/global/CustomCursor";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Navigation />
           {children}
         </SmoothScroller>
+        <Footer />
       </body>
     </html>
   );

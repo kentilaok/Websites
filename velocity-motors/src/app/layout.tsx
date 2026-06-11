@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const syncopate = Syncopate({
   variable: "--font-syncopate",
@@ -35,6 +36,7 @@ export default function RootLayout({
           <main className="md:ml-24">
             {children}
           </main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

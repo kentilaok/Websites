@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/global/Navigation";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
+import Footer from "@/components/global/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <CustomCursor />
         <Navigation />
         <main className="flex-grow pt-24 pb-16">{children}</main>
+        <Footer />
       </body>
     </html>
   );

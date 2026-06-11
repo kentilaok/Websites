@@ -3,6 +3,7 @@ import "./globals.css";
 import CustomCursor from "@/components/global/CustomCursor";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 export const metadata: Metadata = {
   title: "Abyss Oceanics | Deep Sea Exploration",
@@ -23,6 +24,7 @@ export default function RootLayout({
         {/* Background ambient lighting */}
         <div className="fixed inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-abyss-700/50 via-abyss-900 to-black"></div>
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/global/CustomCursor";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <main className="flex-grow pt-24 pb-16">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

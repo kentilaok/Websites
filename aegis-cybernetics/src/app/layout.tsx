@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/global/CustomCursor";
 import Navigation from "@/components/global/Navigation";
 import SmoothScroller from "@/components/global/SmoothScroller";
+import Footer from "@/components/global/Footer";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
           <main className="pt-24 min-h-screen">
             {children}
           </main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

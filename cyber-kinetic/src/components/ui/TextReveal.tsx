@@ -13,7 +13,7 @@ interface TextRevealProps {
 }
 
 export default function TextReveal({ text, className = "", as: Tag = "p" }: TextRevealProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<any>(null);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -22,7 +22,7 @@ export default function TextReveal({ text, className = "", as: Tag = "p" }: Text
     // Split text into words for animation
     const words = text.split(" ");
     el.innerHTML = "";
-    words.forEach((word) => {
+    words.forEach((word: string) => {
       const span = document.createElement("span");
       span.className = "inline-block overflow-hidden pb-2 mr-[0.25em]";
       const innerSpan = document.createElement("span");
@@ -51,5 +51,6 @@ export default function TextReveal({ text, className = "", as: Tag = "p" }: Text
     };
   }, [text]);
 
+  // @ts-ignore - Dynamic tag ref causes complex union type error
   return <Tag ref={containerRef} className={className} />;
 }

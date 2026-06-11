@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
@@ -39,6 +40,7 @@ export default function RootLayout({
           <main className="relative z-10">
             {children}
           </main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

@@ -68,7 +68,7 @@ export default function Navigation() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-verve-dark/95 backdrop-blur-xl border-t border-verve-gray flex flex-col md:hidden">
+        <div className="fixed inset-0 top-[88px] w-full h-[calc(100vh-88px)] bg-verve-dark/98 backdrop-blur-xl border-t border-verve-gray flex flex-col md:hidden z-40 overflow-y-auto">
           {links.map((link) => (
             <Link
               key={link.href}

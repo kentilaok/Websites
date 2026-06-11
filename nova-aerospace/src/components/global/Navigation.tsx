@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { name: "MISSION CONTROL", path: "/" },
@@ -25,9 +26,10 @@ export default function Navigation() {
       <div className="fixed top-8 right-8 z-[100]">
         <button
           onClick={() => setIsOpen(true)}
-          className="font-orbitron text-xs tracking-widest uppercase border border-white/20 px-6 py-2 hover:border-na-atmosphere hover:text-na-atmosphere transition-colors bg-na-void/50 backdrop-blur-sm"
+          className="p-3 border border-white/20 hover:border-na-atmosphere text-white hover:text-na-atmosphere transition-colors bg-na-void/50 backdrop-blur-sm"
+          aria-label="Open menu"
         >
-          [ COMMS_LINK ]
+          <Menu className="w-6 h-6" />
         </button>
       </div>
 
@@ -49,9 +51,10 @@ export default function Navigation() {
 
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-8 right-8 font-orbitron text-xs tracking-widest text-na-atmosphere hover:text-white transition-colors"
+              className="absolute top-8 right-8 p-3 text-na-atmosphere hover:text-white transition-colors"
+              aria-label="Close menu"
             >
-              [ TERMINATE_LINK ]
+              <X className="w-6 h-6" />
             </button>
 
             <nav className="flex flex-col gap-8 text-center">

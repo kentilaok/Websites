@@ -4,6 +4,8 @@ import "./globals.css";
 import Navigation from "@/components/global/Navigation";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
+import Footer from "@/components/global/Footer";
+
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700", "900"] });
 
@@ -26,6 +28,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

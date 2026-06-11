@@ -52,5 +52,8 @@ export default function TextReveal({ text, className = "", as: Tag = "p" }: Text
     };
   }, [text]);
 
-  return <Tag ref={containerRef} className={className} />;
+  return (
+    // @ts-expect-error - Complex union type for polymorphic ref
+    <Tag ref={containerRef} className={className} />
+  );
 }

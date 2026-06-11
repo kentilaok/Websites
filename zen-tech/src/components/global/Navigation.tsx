@@ -1,6 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { path: "/products", label: "Products" },
+    { path: "/engineering", label: "Engineering" },
+    { path: "/support", label: "Support" },
+  ];
+
   return (
     <>
       {/* Absolute Minimal Top Logo */}
@@ -13,14 +25,40 @@ export default function Navigation() {
         </Link>
       </div>
 
-      {/* Bottom Taskbar */}
-      <header className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
+      {/* Mobile Menu Button */}
+      <div className="fixed top-8 right-8 z-[60] md:hidden pointer-events-auto">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-3 bg-pure-white/80 backdrop-blur-xl border border-carbon/5 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.04)] text-carbon hover:bg-carbon/5 transition-colors cursor-none"
+        >
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 bg-pure-white/95 backdrop-blur-2xl z-50 transition-all duration-500 flex flex-col items-center justify-center md:hidden pointer-events-auto ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <nav className="flex flex-col items-center gap-8">
+          {navItems.map((item) => (
+            <Link 
+              key={item.path} 
+              href={item.path}
+              onClick={() => setIsOpen(false)}
+              className="text-2xl font-light tracking-[0.2em] text-carbon hover:text-titanium transition-colors uppercase cursor-none"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Bottom Taskbar (Desktop) */}
+      <header className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none hidden md:block">
         <nav className="flex gap-2 p-2 bg-pure-white/80 backdrop-blur-xl border border-carbon/5 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.04)] pointer-events-auto">
-          {[
-            { path: "/products", label: "Products" },
-            { path: "/engineering", label: "Engineering" },
-            { path: "/support", label: "Support" },
-          ].map((item) => (
+          {navItems.map((item) => (
             <Link 
               key={item.path} 
               href={item.path}

@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   description: "Monolithic, industrial, highly technical.",
 };
 
+import Footer from "@/components/global/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,6 +39,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

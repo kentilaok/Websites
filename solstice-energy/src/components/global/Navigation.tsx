@@ -31,7 +31,7 @@ export default function Navigation() {
         scrolled ? "glass-panel py-3" : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+      <div className="container relative z-50 mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 group">
           <Sun className="text-solar-500 group-hover:rotate-90 transition-transform duration-700" size={32} />
           <span className="text-2xl font-bold tracking-tighter text-gradient">SOLSTICE</span>
@@ -64,26 +64,28 @@ export default function Navigation() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full glass-panel flex flex-col items-center py-6 gap-6 border-t border-glass-border">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`text-lg font-medium uppercase tracking-wider ${
-                pathname === link.href ? "text-solar-600" : "text-gray-800"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <button className="bg-solar-500 text-white px-8 py-3 rounded-full font-medium w-3/4 max-w-xs shadow-lg">
-            Get in Touch
-          </button>
-        </div>
-      )}
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-solar-50/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 transition-transform duration-500 md:hidden ${
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            onClick={() => setMobileMenuOpen(false)}
+            className={`text-2xl font-bold uppercase tracking-wider ${
+              pathname === link.href ? "text-solar-600" : "text-gray-800"
+            } hover:text-solar-500 transition-colors`}
+          >
+            {link.name}
+          </Link>
+        ))}
+        <button className="bg-solar-500 hover:bg-solar-600 text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-solar-500/30 transition-all">
+          Get in Touch
+        </button>
+      </div>
     </header>
   );
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

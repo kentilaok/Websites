@@ -5,6 +5,7 @@ import "./globals.css";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import CustomCursor from "@/components/global/CustomCursor";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         <main className="flex-grow flex flex-col pt-24 md:pt-28">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

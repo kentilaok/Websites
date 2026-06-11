@@ -23,8 +23,7 @@ export default function Navigation() {
           onClick={() => setIsOpen(true)}
           className="group flex flex-col items-center justify-center gap-[6px] w-12 h-12 rounded-full border border-white/20 hover:border-vm-red transition-colors bg-vm-dark/50 backdrop-blur-md"
         >
-          <span className="w-5 h-[2px] bg-white group-hover:bg-vm-red transition-colors" />
-          <span className="w-5 h-[2px] bg-white group-hover:bg-vm-red transition-colors w-[12px] self-end mr-[14px]" />
+          <Menu className="w-5 h-5 text-white group-hover:text-vm-red transition-colors" />
         </button>
       </div>
 

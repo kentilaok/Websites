@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navigation() {
@@ -23,9 +24,10 @@ export default function Navigation() {
         <div className="pointer-events-auto">
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="cursor-none text-xs uppercase tracking-[0.2em] hover:opacity-50 transition-opacity"
+            className="cursor-none hover:opacity-50 transition-opacity"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? "Close" : "Menu"}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </header>

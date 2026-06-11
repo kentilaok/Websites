@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "@/components/global/Navigation";
+import { Footer } from "@/components/global/Footer";
 import { CustomCursor } from "@/components/global/CustomCursor";
 import { SmoothScroller } from "@/components/global/SmoothScroller";
 
@@ -20,9 +21,10 @@ export default function RootLayout({
         <SmoothScroller />
         <CustomCursor />
         <Navigation />
-        <main className="pt-20 pb-20">
+        <main className="pt-20 pb-20 flex-grow">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

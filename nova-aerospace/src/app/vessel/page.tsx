@@ -1,16 +1,5 @@
 import TextReveal from "@/components/ui/TextReveal";
 
-export default function VesselPage() {
-  return (
-    <div className="min-h-screen pt-48 pb-32">
-      <div className="container">
-        <TextReveal>
-           <h1 className="text-5xl md:text-7xl font-bold mb-8">THE <span className="text-na-nebula">VESSEL</span></h1>
-           <p className="text-xl text-na-stardust/70 max-w-3xl mb-24 leading-relaxed font-light">
-             The Astra-V spacecraft represents a paradigm shift in commercial aerospace engineering. Fully reusable, autonomously piloted, and designed for maximum passenger comfort.
-           </p>
-        </TextReveal>
-
 const features = [
   {
     tagline: "STRUCTURAL INTEGRITY",

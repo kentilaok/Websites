@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 interface TextRevealProps {
   text: string;
   className?: string;
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: any;
 }
 
 export default function TextReveal({ text, className = "", as: Tag = "p" }: TextRevealProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<any>(null);
 
   useEffect(() => {
     const el = containerRef.current;

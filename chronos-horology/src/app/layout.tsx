@@ -3,6 +3,7 @@ import "./globals.css";
 import CustomCursor from "@/components/global/CustomCursor";
 import SmoothScroller from "@/components/global/SmoothScroller";
 import Navigation from "@/components/global/Navigation";
+import Footer from "@/components/global/Footer";
 
 export const metadata: Metadata = {
   title: "Chronos Horology | Timeless Luxury",
@@ -21,6 +22,7 @@ export default function RootLayout({
           <CustomCursor />
           <Navigation />
           <main className="flex-1">{children}</main>
+          <Footer />
         </SmoothScroller>
       </body>
     </html>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { name: "[ HOME ]", path: "/" },
@@ -19,9 +20,10 @@ export default function Navigation() {
       <div className="fixed top-8 right-8 z-[100] mix-blend-difference">
         <button
           onClick={() => setIsOpen(true)}
-          className="text-ec-lime font-bold text-2xl tracking-widest hover:bg-ec-lime hover:text-ec-black px-4 py-2 border-2 border-ec-lime transition-colors uppercase"
+          className="text-ec-lime font-bold tracking-widest hover:bg-ec-lime hover:text-ec-black p-2 border-2 border-ec-lime transition-colors flex items-center justify-center"
+          aria-label="Open menu"
         >
-          MENU
+          <Menu className="w-8 h-8" strokeWidth={2.5} />
         </button>
       </div>
 
@@ -36,9 +38,10 @@ export default function Navigation() {
           >
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-8 right-8 text-ec-black font-bold text-2xl tracking-widest hover:bg-ec-black hover:text-ec-lime px-4 py-2 border-2 border-ec-black transition-colors uppercase"
+              className="absolute top-8 right-8 text-ec-black font-bold tracking-widest hover:bg-ec-black hover:text-ec-lime p-2 border-2 border-ec-black transition-colors flex items-center justify-center"
+              aria-label="Close menu"
             >
-              CLOSE
+              <X className="w-8 h-8" strokeWidth={2.5} />
             </button>
 
             <nav className="flex flex-col gap-4">
