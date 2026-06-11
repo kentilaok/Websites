@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-starlight-black: #05050a;
+  --color-starlight-dark: #0a0a14;
+  --color-stark-white: #f8f9fb;
+  --color-glow-purple: #9b51e0;
+  --color-glow-purple-dark: #6a1b9a;
+  --color-neon-purple: #d194ff;
+  
+  --font-sans: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --font-tech: 'Space Mono', monospace;
+}
+
+@layer base {
+  :root {
+    --background: #05050a;
+    --foreground: #f8f9fb;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  /* Custom selection */
+  ::selection {
+    background-color: var(--color-glow-purple);
+    color: var(--color-stark-white);
+  }
+
+  /* Hide default cursor for custom cursor */
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    a, button, input, textarea, select {
+      cursor: none;
+    }
+  }
+}
